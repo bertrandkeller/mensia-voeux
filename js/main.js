@@ -156,11 +156,13 @@ jQuery(document).ready(function($){
 		if (selectedContent.index() > visibleContent.index()) {
 			var classEnetering = 'selected enter-right',
 				classLeaving = 'leave-left';
-				$('.timer').countTo({speed: 1500,});
+				$('.timer-1').countTo({speed: 1500,});
+				$('.timer-2').countTo({speed: 2500,});
 		} else {
 			var classEnetering = 'selected enter-left',
 				classLeaving = 'leave-right';
-				$('.timer').countTo({speed: 1500,});
+				$('.timer-1').countTo({speed: 1500,});
+				$('.timer-2').countTo({speed: 2500,});
 		}
 
 		selectedContent.attr('class', classEnetering);

@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+p a:hover {
+  text-decoration: underline;
+}
+
 /* -------------------------------- 
 
 Main Components 
@@ -297,7 +301,32 @@ Main Components
 }
 
 .span-50 {
-  width: 49%
+  width: 100%;
+}
+
+.span-50:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.span-100 {
+  display: block;
+  margin: 3rem auto !important;
+  max-width: 500px !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.text {
+  display: block;
+}
+
+.big,
+.big strong {
+  line-height: 1;
+  font-size: 3rem !important;
+  font-weight: bold !important;
 }
 
 .cd-horizontal-timeline .events-content li > * {
@@ -327,7 +356,9 @@ Main Components
 }
 
 .cd-horizontal-timeline .events-content .timer {
+  color: #aa191d;
   font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .cd-horizontal-timeline .events-content .number {
@@ -336,7 +367,6 @@ Main Components
   text-align: center;
 }
 .cd-horizontal-timeline .events-content .number .timer{
-  display: block;
   font-size: 4rem;
   margin-bottom: -15px;
 }
@@ -351,10 +381,16 @@ Main Components
 .cd-horizontal-timeline .events-content p strong {
   font-weight: 700;
 }
-.cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
+.cd-horizontal-timeline .events-content p {
   line-height: 1.6;
 }
 @media only screen and (min-width: 768px) {
+  .span-50 {
+    width: 49%;
+  }
+  .cd-timeline-navigation {
+    display: none;
+  }
   .cd-horizontal-timeline .events-content h2 {
     font-size: 7rem;
   }
