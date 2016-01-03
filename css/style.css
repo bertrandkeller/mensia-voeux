@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   font-family: "Fira Sans", sans-serif;
   color: #383838;
-  /*background-color: #f8f8f8;*/
+  /*background-color: #fff;*/
 }
 
 a {
@@ -68,13 +68,13 @@ Main Components
 }
 .cd-horizontal-timeline .events-wrapper::before {
   left: 0;
-  background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: -webkit-linear-gradient( left , #fff, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to right, #fff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events-wrapper::after {
   right: 0;
-  background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: -webkit-linear-gradient( right , #fff, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to left, #fff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
@@ -145,7 +145,7 @@ Main Components
   width: 20px;
   border-radius: 50%;
   border: 2px solid #dfdfdf;
-  background-color: #f8f8f8;
+  background-color: #fff;
   -webkit-transition: background-color 0.3s, border-color 0.3s;
   -moz-transition: background-color 0.3s, border-color 0.3s;
   transition: background-color 0.3s, border-color 0.3s;
