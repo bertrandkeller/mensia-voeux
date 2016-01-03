@@ -15,7 +15,7 @@ body {
   font-size: 1.6rem;
   font-family: "Fira Sans", sans-serif;
   color: #383838;
-  background-color: #f8f8f8;
+  /*background-color: #f8f8f8;*/
 }
 
 a {
@@ -228,7 +228,7 @@ Main Components
   right: 0;
 }
 .no-touch .cd-timeline-navigation a:hover {
-  border-color: #7b9d6f;
+  border-color: #aa191d;
 }
 .cd-timeline-navigation a.inactive {
   cursor: not-allowed;
