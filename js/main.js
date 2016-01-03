@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 60;
+		eventsMinDistance = 240;
 
 	(timelines.length > 0) && initTimeline(timelines);
 
@@ -109,7 +109,7 @@ jQuery(document).ready(function($){
 
 	function translateTimeline(timelineComponents, value, totWidth) {
 		var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
-		value = (value > 0) ? 0 : value; //only negative translate value
+		value = (value > 0) ? -400 : value; //only negative translate value
 		value = ( !(typeof totWidth === 'undefined') &&  value < totWidth ) ? totWidth : value; //do not translate more than timeline width
 		setTransformValue(eventsWrapper, 'translateX', value+'px');
 		//update navigation arrows visibility
@@ -156,9 +156,11 @@ jQuery(document).ready(function($){
 		if (selectedContent.index() > visibleContent.index()) {
 			var classEnetering = 'selected enter-right',
 				classLeaving = 'leave-left';
+				$('.timer').countTo({speed: 1500,});
 		} else {
 			var classEnetering = 'selected enter-left',
 				classLeaving = 'leave-right';
+				$('.timer').countTo({speed: 1500,});
 		}
 
 		selectedContent.attr('class', classEnetering);
