@@ -3,7 +3,9 @@
 Primary style
 
 -------------------------------- */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -12,15 +14,15 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
   color: #383838;
   /*background-color: #fff;*/
 }
 
 a {
-  color: #aa191d;
   text-decoration: none;
+  color: #aa191d;
 }
 
 p a:hover {
@@ -33,11 +35,11 @@ Main Components
 
 -------------------------------- */
 .cd-horizontal-timeline {
-  opacity: 0;
   margin: 2em auto;
+  opacity: 0;
   -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+     -moz-transition: opacity 0.2s;
+          transition: opacity 0.2s;
 }
 .cd-horizontal-timeline::before {
   /* never visible - this is used in jQuery to check the current MQ */
@@ -50,120 +52,121 @@ Main Components
 }
 .cd-horizontal-timeline .timeline {
   position: relative;
-  height: 100px;
+  margin: 0 auto;
   width: 90%;
   max-width: 800px;
-  margin: 0 auto;
+  height: 100px;
 }
 .cd-horizontal-timeline .events-wrapper {
   position: relative;
-  height: 100%;
-  margin: 0 40px;
   overflow: hidden;
+  margin: 0 40px;
+  height: 100%;
 }
-.cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
+.cd-horizontal-timeline .events-wrapper::after,
+.cd-horizontal-timeline .events-wrapper::before {
+  position: absolute;
   /* these are used to create a shadow effect at the sides of the timeline */
   content: '';
-  position: absolute;
-  z-index: 2;
   top: 0;
-  height: 100%;
   width: 20px;
+  height: 100%;
+  z-index: 2;
 }
 .cd-horizontal-timeline .events-wrapper::before {
   left: 0;
   background-image: -webkit-linear-gradient( left , #fff, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #fff, rgba(248, 248, 248, 0));
+  background-image:         linear-gradient(to right, #fff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events-wrapper::after {
   right: 0;
   background-image: -webkit-linear-gradient( right , #fff, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #fff, rgba(248, 248, 248, 0));
+  background-image:         linear-gradient(to left, #fff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
   position: absolute;
-  z-index: 1;
-  left: 0;
   top: 60px;
+  left: 0;
   height: 5px;
   /* width will be set using JavaScript */
   background: #dfdfdf;
   -webkit-transition: -webkit-transform 0.4s;
-  -moz-transition: -moz-transform 0.4s;
-  transition: transform 0.4s;
+     -moz-transition:    -moz-transform 0.4s;
+          transition:         transform 0.4s;
   transform: translateX(-430px);
+  z-index: 1;
 }
 .cd-horizontal-timeline .filling-line {
   /* this is used to create the green line filling the timeline */
   position: absolute;
-  z-index: 1;
-  left: 0;
   top: 0;
-  height: 100%;
+  left: 0;
   width: 100%;
+  height: 100%;
   background-color: #aa191d;
-  -webkit-transform: scaleX(0);
-  -moz-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -ms-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
   -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
+     -moz-transition:    -moz-transform 0.3s;
+          transition:         transform 0.3s;
+  -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+       -o-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left center;
+     -moz-transform-origin: left center;
+      -ms-transform-origin: left center;
+       -o-transform-origin: left center;
+          transform-origin: left center;
+  z-index: 1;
 }
 .cd-horizontal-timeline .events a {
   position: absolute;
   bottom: 8px;
-  z-index: 2;
-  text-align: center;
-  font-size: 1.6rem;
   padding-bottom: 15px;
-  color: #383838;
+  font-size: 1.6rem;
   font-weight: 700;
+  text-align: center;
+  color: #383838;
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+       -o-transform: translateZ(0);
+          transform: translateZ(0);
+  z-index: 2;
 }
 .cd-horizontal-timeline .events a::after {
+  position: absolute;
   /* this is used to create the event spot */
   content: '';
-  position: absolute;
-  left: 50%;
   right: auto;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
   bottom: -15px;
-  height: 20px;
+  left: 50%;
   width: 20px;
-  border-radius: 50%;
+  height: 20px;
   border: 2px solid #dfdfdf;
+  border-radius: 50%;
   background-color: #fff;
   -webkit-transition: background-color 0.3s, border-color 0.3s;
-  -moz-transition: background-color 0.3s, border-color 0.3s;
-  transition: background-color 0.3s, border-color 0.3s;
+     -moz-transition: background-color 0.3s, border-color 0.3s;
+          transition: background-color 0.3s, border-color 0.3s;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .no-touch .cd-horizontal-timeline .events a:hover::after {
-  background-color: #aa191d;
   border-color: #aa191d;
+  background-color: #aa191d;
 }
 .cd-horizontal-timeline .events a.selected {
   pointer-events: none;
 }
 .cd-horizontal-timeline .events a.selected::after {
-  background-color: #aa191d;
   border-color: #aa191d;
+  background-color: #aa191d;
 }
 .cd-horizontal-timeline .events a.older-event::after {
   border-color: #aa191d;
@@ -182,51 +185,51 @@ Main Components
   /* these are the left/right arrows to navigate the timeline */
   /*display: none;*/
   position: absolute;
-  z-index: 1;
   top: 61%;
   bottom: auto;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  height: 34px;
-  width: 34px;
-  border-radius: 50%;
-  border: 2px solid #dfdfdf;
   /* replace text with an icon */
   overflow: hidden;
-  color: transparent;
-  text-indent: 100%;
+  width: 34px;
+  height: 34px;
   white-space: nowrap;
+  text-indent: 100%;
+  color: transparent;
+  border: 2px solid #dfdfdf;
+  border-radius: 50%;
   -webkit-transition: border-color 0.3s;
-  -moz-transition: border-color 0.3s;
-  transition: border-color 0.3s;
+     -moz-transition: border-color 0.3s;
+          transition: border-color 0.3s;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
 }
 .cd-timeline-navigation a::after {
+  position: absolute;
   /* arrow icon */
   content: '';
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  left: 50%;
   top: 50%;
-  bottom: auto;
   right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  bottom: auto;
+  left: 50%;
+  width: 16px;
+  height: 16px;
   background: url(../img/cd-arrow.svg) no-repeat 0 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+     -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+       -o-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
 }
 .cd-timeline-navigation a.prev {
   left: 0;
   -webkit-transform: translateY(-50%) rotate(180deg);
-  -moz-transform: translateY(-50%) rotate(180deg);
-  -ms-transform: translateY(-50%) rotate(180deg);
-  -o-transform: translateY(-50%) rotate(180deg);
-  transform: translateY(-50%) rotate(180deg);
+     -moz-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+       -o-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
 }
 .cd-timeline-navigation a.next {
   right: 0;
@@ -246,32 +249,32 @@ Main Components
 
 .cd-horizontal-timeline .events-content {
   position: relative;
-  width: 100%;
   margin: 2em 0;
+  width: 100%;
   /*overflow: hidden;*/
   -webkit-transition: height 0.4s;
-  -moz-transition: height 0.4s;
-  transition: height 0.4s;
+     -moz-transition: height 0.4s;
+          transition: height 0.4s;
 }
 .cd-horizontal-timeline .events-content li {
   position: absolute;
-  z-index: 1;
-  width: 100%;
-  left: 0;
   top: 0;
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
+  left: 0;
   padding: 0 5%;
+  width: 100%;
   opacity: 0;
+  -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+       -o-transform: translateX(-100%);
+          transform: translateX(-100%);
   -webkit-animation-duration: 0.4s;
-  -moz-animation-duration: 0.4s;
-  animation-duration: 0.4s;
+     -moz-animation-duration: 0.4s;
+          animation-duration: 0.4s;
   -webkit-animation-timing-function: ease-in-out;
-  -moz-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
+     -moz-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  z-index: 1;
 }
 .cd-horizontal-timeline .events-content li:first-child:before,
 .cd-horizontal-timeline .events-content li:last-child:before {
@@ -281,44 +284,48 @@ Main Components
   left: 0;
   width: 100%;
   height: 110%;
-  object-fit: cover;
+  opacity: 0.1;
   /*background: url(../img/papier_journal.jpg) no-repeat 0 0;*/
   background-size: cover;
   z-index: -1;
-  opacity: 0.1;
+
+  object-fit: cover;
   -webkit-filter: blur(1px);
-  filter: blur(1px);
+          filter: blur(1px);
 }
 .cd-horizontal-timeline .events-content li:last-child:before {
+  opacity: 0.2;
   background: url(../img/photo-ville.jpg) no-repeat 0 0;
   background: none;
-  opacity: 0.2;
 }
 .cd-horizontal-timeline .events-content li.selected {
   /* visible event content */
   position: relative;
-  z-index: 2;
   opacity: 1;
   -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
+     -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+       -o-transform: translateX(0);
+          transform: translateX(0);
+  z-index: 2;
 }
-.cd-horizontal-timeline .events-content li.enter-right, .cd-horizontal-timeline .events-content li.leave-right {
+.cd-horizontal-timeline .events-content li.enter-right,
+.cd-horizontal-timeline .events-content li.leave-right {
   -webkit-animation-name: cd-enter-right;
-  -moz-animation-name: cd-enter-right;
-  animation-name: cd-enter-right;
+     -moz-animation-name: cd-enter-right;
+          animation-name: cd-enter-right;
 }
-.cd-horizontal-timeline .events-content li.enter-left, .cd-horizontal-timeline .events-content li.leave-left {
+.cd-horizontal-timeline .events-content li.enter-left,
+.cd-horizontal-timeline .events-content li.leave-left {
   -webkit-animation-name: cd-enter-left;
-  -moz-animation-name: cd-enter-left;
-  animation-name: cd-enter-left;
+     -moz-animation-name: cd-enter-left;
+          animation-name: cd-enter-left;
 }
-.cd-horizontal-timeline .events-content li.leave-right, .cd-horizontal-timeline .events-content li.leave-left {
+.cd-horizontal-timeline .events-content li.leave-right,
+.cd-horizontal-timeline .events-content li.leave-left {
   -webkit-animation-direction: reverse;
-  -moz-animation-direction: reverse;
-  animation-direction: reverse;
+     -moz-animation-direction: reverse;
+          animation-direction: reverse;
 }
 
 .span-50 {
@@ -350,30 +357,45 @@ Main Components
 .big,
 .big strong {
   line-height: 1;
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
   font-weight: bold !important;
 }
-
+.btn {
+  display: inline-block;
+  margin: 2rem 0 0;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: #fff 3px solid;
+  border-radius: 12px;
+  background: #aa191d;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  text-decoration: none;
+  color: #fafafa;
+  border-color: #333;
+}
 .cd-horizontal-timeline .events-content li > * {
-  max-width: 800px;
   margin: 0 auto 1.5rem;
+  max-width: 800px;
 }
 .cd-horizontal-timeline .events-content h2 {
-  font-weight: bold;
-  font-size: 2.6rem;
-  font-family: "Open Sans", serif;
-  font-weight: 700;
   line-height: 1.2;
+  font-family: 'Open Sans', serif;
+  font-size: 2.6em;
+  font-weight: bold;
+  font-weight: 700;
 }
 .cd-horizontal-timeline .events-content em {
   display: block;
+  margin: -7px auto 1.5rem;
+  font-size: 0.5em;
   font-style: italic;
-  margin: -10px auto 1.5rem;
 }
 .cd-horizontal-timeline .events-content strong {
   display: block;
-  font-size: 2rem;
   margin-bottom: -5px;
+  font-size: 2rem;
 }
 .cd-horizontal-timeline .events-content p .span-50 {
   display: inline-block;
@@ -390,9 +412,15 @@ Main Components
   width: 47%;
   text-align: center;
 }
-.cd-horizontal-timeline .events-content .number .timer{
+.cd-horizontal-timeline .events-content .number .timer {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 0.2rem 0rem;
+  min-width: 73px;
   font-size: 4rem;
-  margin-bottom: -15px;
+  color: #fff;
+  border-radius: 50%;
+  background: #aa191d;
 }
 .cd-horizontal-timeline .events-content em::before {
   content: '- ';
@@ -450,18 +478,18 @@ Main Components
   0% {
     opacity: 0;
     -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    transform: translateX(100%);
+       -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+         -o-transform: translateX(100%);
+            transform: translateX(100%);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    -o-transform: translateX(0%);
-    transform: translateX(0%);
+       -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+         -o-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 @-webkit-keyframes cd-enter-left {
@@ -488,17 +516,17 @@ Main Components
   0% {
     opacity: 0;
     -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+         -o-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    -o-transform: translateX(0%);
-    transform: translateX(0%);
+       -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+         -o-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
