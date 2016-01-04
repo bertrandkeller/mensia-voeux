@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'> -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&subset=latin%2Clatin-ext&ver=4.4' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="css/reset.css">
   <!-- CSS reset -->
@@ -23,9 +23,9 @@
       <div class="events-wrapper">
         <div class="events">
           <ol>
-            <li><a href="#0" data-date="01/01/1986" class="selected">1986, faits marquants</a></li>
-            <li><a href="#0" data-date="01/01/2016">2016, Nos résolutions</a></li>
-            <li><a href="#0" data-date="01/01/2046">2046, déjà demain ?</a></li>
+            <li><a href="#faits" data-date="01/01/1986" class="selected">1986, faits marquants</a></li>
+            <li><a href="#resolutions" data-date="01/01/2016">2016, Nos résolutions</a></li>
+            <li><a href="#demain" data-date="01/01/2046">2046, déjà demain ?</a></li>
           </ol>
 
           <span class="filling-line" aria-hidden="true"></span>
@@ -44,7 +44,7 @@
 
     <div class="events-content">
       <ol>
-        <li class="selected" data-date="01/01/1986">
+        <li id="faits" class="selected" data-date="01/01/1986">
           <h2>1986 <em>Souvenez-vous de quelques faits marquants de l’actualité</em></h2>
           <p> <strong>International</strong> Sortie de la « guerre froide » Gorbatchev propose à Reagan un plan d'élimination des armes nucléaires à l'horizon 2000, Acte Unique Européen actant la volonté de finaliser le marché unique, montée du terrorisme islamiste (vague d’attentats meurtriers à Paris).</p>
           <p><span class="span-50"><strong>Politique</strong> 1ère cohabitation, 1ère élections régionales au suffrage universel, lois de décentralisation.</span>
@@ -56,7 +56,7 @@
           </p>
         </li>
 
-        <li data-date="01/01/2016">
+        <li id="resolutions" data-date="01/01/2016">
           <h2>30 ans <em>En quelques dates pour le cabinet</em></h2>
 					<p><strong>1986</strong> Création par Hervé Nadal</p>
 					<p><strong>1996</strong> Affirmation du positionnement de conseil de direction et ouverture du capital à de nouveaux associés.</p>
@@ -66,13 +66,13 @@
 					<p class="span-100 center big"><strong>2016</strong> <a href="http://www.mensiaconseil.fr/expertises/">Découvrez nos expertises</a></p>
         </li>
 
-        <li data-date="01/01/2046">
+        <li id="demain" data-date="01/01/2046">
           <h2>2046 <em>Déjà demain ?</em></h2>
-					<p><strong>International</strong>Multi-polarisation.</p>
-					<p><strong>Démographie</strong> <span class="number"><span class="timer timer-1" data-to="9">9</span> <span class="text">milliards de terriens</span></span> <span class="number"><span class="timer timer-2" data-to="70">70</span> <span class="text">millions de français.</span></span></p>
           <p><strong>Mobilités</strong> Finalisation du grand Paris, doublement de la mobilité longue distance et croissance modéré des déplacements courte distance, nouvel essor des véhicules personnels (type gyropodes).</p>
+					<p><strong>Démographie</strong> <span class="number"><span class="timer timer-1" data-to="9">9</span> <span class="text">milliards de terriens</span></span> <span class="number"><span class="timer timer-2" data-to="70">70</span> <span class="text">millions de français.</span></span></p>
 					<p><strong>Economie</strong><span class="span-100 center"> <span class="text">Évolution de</span><span class="number"><span class="timer timer-1" data-to="27">27</span>% à <span class="timer timer-2" data-to="16">16</span>%</span><span class="text">du PIB européen de 2016 à 2046</span></span></p> <p>Nouvelle régionalisation, croissance forte des économies du partage et de la connaissance.</p>
-					<p><strong>Énergie</strong> Échéance du facteur 4.</p>
+          <p><span class="span-50"><strong>International</strong>Multi-polarisation.</span>
+          <span class="span-50"><strong>Énergie</strong> Échéance du facteur 4.</span></p>
 					<p><strong>Société</strong> Plus d’un tiers de la population > 60 ans, diffusion des technologies de l’homme augmenté, essor du télétravail.</p>
         </li>
       </ol>

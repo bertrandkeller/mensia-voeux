@@ -156,13 +156,17 @@ jQuery(document).ready(function($){
 		if (selectedContent.index() > visibleContent.index()) {
 			var classEnetering = 'selected enter-right',
 				classLeaving = 'leave-left';
+				bodyClass = event[0].hash.slice(1);
 				$('.timer-1').countTo({speed: 1500,});
 				$('.timer-2').countTo({speed: 2500,});
+				$('body').removeClass().addClass(bodyClass);
 		} else {
 			var classEnetering = 'selected enter-left',
 				classLeaving = 'leave-right';
+				bodyClass = event[0].hash.slice(1);
 				$('.timer-1').countTo({speed: 1500,});
 				$('.timer-2').countTo({speed: 2500,});
+				$('body').removeClass().addClass(bodyClass);
 		}
 
 		selectedContent.attr('class', classEnetering);
