@@ -365,6 +365,8 @@ Main Components
   display: block;
   vertical-align: top;
   margin: 0 0.8rem 1.5rem 0;
+  border: 1px solid #e1e1e1;
+  max-width: 130px;
 }
 .img.right {
   float: right;
@@ -465,7 +467,7 @@ Main Components
     font-size: 5rem;
   }
   .cd-horizontal-timeline .events-content em {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   .cd-horizontal-timeline .events-content p {
     font-size: 1.6rem;
